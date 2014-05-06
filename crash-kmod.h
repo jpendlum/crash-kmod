@@ -227,7 +227,7 @@ extern "C" {
 #define USRP_RX_ENABLE_N                  1
 #define USRP_TX_ENABLE_BASE               USRP_BANK0_BASE
 #define USRP_TX_ENABLE_OFFSET             1
-#define USRP_TX_ENABLE_N                  2
+#define USRP_TX_ENABLE_N                  1
 #define USRP_RX_ENABLE_SIDEBAND_BASE      USRP_BANK0_BASE
 #define USRP_RX_ENABLE_SIDEBAND_OFFSET    2
 #define USRP_RX_ENABLE_SIDEBAND_N         1
@@ -462,22 +462,24 @@ extern "C" {
 #define GLOBAL_M_AXI_ARUSER_N             5
 
 // USRP Modes
-// RX modes (lower nibble)
+// Command (upper nibble)
+#define CMD_TX_MODE                       (0x1 << 4)
+#define CMD_RX_MODE                       (0x2 << 4)
+// RX / TX mode (lower nibble)
 #define RX_ADC_RAW_MODE                   0x0
-#define RX_ADC_DSP_MODE                   0x1
-#define RX_SINE_TEST_MODE                 0x2
+#define RX_ADC_DC_OFF_MODE                0x1
+#define RX_TEST_SINE_MODE                 0x2
 #define RX_TEST_PATTERN_MODE              0x3
 #define RX_ALL_1s_MODE                    0x4
 #define RX_ALL_0s_MODE                    0x5
-#define RX_CHA_1s_CHB_0s_MODE             0x6
-#define RX_CHA_0s_CHB_1s_MODE             0x7
-#define RX_CHECK_ALIGN_MODE               0x8
+#define RX_I_1s_Q_0s_MODE                 0x6
+#define RX_I_0s_Q_1s_MODE                 0x7
+#define RX_CAL_INTF_MODE                  0x8
 #define RX_TX_LOOPBACK_MODE               0x9
-// TX modes (upper nibble)
-#define TX_PASSTHRU_MODE                  (0x0 << 4)
-#define TX_DAC_RAW_MODE                   (0x1 << 4)
-#define TX_DAC_DSP_MODE                   (0x2 << 4)
-#define TX_SINE_TEST_MODE                 (0x3 << 4)
+#define TX_PASSTHRU_MODE                  0x0
+#define TX_DAC_RAW_MODE                   0x1
+#define TX_DAC_DC_OFF_MODE                0x2
+#define TX_SINE_TEST_MODE                 0x3
 
 #define CRASH_IOCTL_BASE 'W'
 #define CRASH_RESET                       _IO(CRASH_IOCTL_BASE, 0x40)
