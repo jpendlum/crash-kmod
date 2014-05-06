@@ -227,7 +227,7 @@ extern "C" {
 #define USRP_RX_ENABLE_N                  1
 #define USRP_TX_ENABLE_BASE               USRP_BANK0_BASE
 #define USRP_TX_ENABLE_OFFSET             1
-#define USRP_TX_ENABLE_N                  2
+#define USRP_TX_ENABLE_N                  1
 #define USRP_RX_ENABLE_SIDEBAND_BASE      USRP_BANK0_BASE
 #define USRP_RX_ENABLE_SIDEBAND_OFFSET    2
 #define USRP_RX_ENABLE_SIDEBAND_N         1
